@@ -1,0 +1,91 @@
+[i='user_info']{
+  .title{
+    line-height: 40px;
+    font-size: 16px;
+    // font-weight: 700;
+    color:black;
+    a {
+      font-weight: 400;
+      font-size: 14px;
+    }
+  }
+  .line {
+    height: 1px;
+    background-color: #d0d6d9;
+    margin-top: 12px;
+  }
+  .info-wapper {
+    margin: 24px auto 24px 40px;
+    .info-box {
+      margin-bottom: 12px;
+      label {
+        width: 120px;
+        line-height: 20px;
+        padding: 20px 0;
+        text-align: center;
+        background-color: #f3f5f7;
+        color: #07111b;
+        // font-weight: 700;
+      }
+      .hobby-span{
+        padding:1px 3px;
+        background-color: var(--allcolor);
+        border-radius:2px;
+        color:#FFF;
+        margin-right:5px;
+      }
+      div {
+        width: 708px;
+        margin-left: 8px;
+        line-height: 20px;
+        padding: 20px 0 20px 22px;
+        border-bottom: 1px solid #d9dde1;
+      }
+    }
+  }
+  #user-info-form{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    width:488px;
+    height:464px;
+    background-color:#fff;
+    box-shadow:0 0 15px 5px rgba(0,0,0,0.1);
+    .user-title{
+      padding: 24px 32px 0;
+      div {
+        font-size: 16px;
+        color: #07111b;
+        a.close {
+          font-size: 24px;
+          position: absolute;
+          right: 32px;
+          top: 24px;
+          color: #93999f;
+          display: block;
+        }
+      }
+    }
+    .inner{
+      .moco-modal-dialog {
+        padding: 24px 32px 32px;
+        .form-list{
+          margin-bottom:15px;
+          >label{
+            display:inline-block;
+            width:30%;
+          }
+          .hobby{
+            // display:inline-block;
+          }
+        }
+      }
+    }
+    .btn{
+      margin-right:50px;
+    }
+  }
+}

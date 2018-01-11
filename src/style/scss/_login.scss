@@ -1,0 +1,68 @@
+html,body{
+	background-color:#fff;
+}
+[i="login"]{
+	.logobg{
+		padding-top:20px;
+	}
+	#login{
+		.promotion-banner {
+	    float: left;
+	    height: 370px;
+	    margin: 0 115px 0 0;
+	    width: 480px;
+      img{
+        width:100%;
+      }
+		}
+    .login-section{
+      float:left;
+      margin-top:18px;
+      margin: 0 auto;
+      width: 270px;
+      background: #FFF;
+      .form-nor{
+        padding-top:0;
+      }
+      .form-field {
+        padding-left: 0; 
+        padding-bottom: 8px;
+        .btn{
+          width: 100%;
+        }
+        .f-text {
+          width: 230px;
+          padding-left: 33px;
+        }
+        .forget-password {
+          float: right;
+          font-size:12px;
+        }
+      }
+      .form-icon{
+        position:relative;
+        .fa{
+          color:#aaa;
+        }
+      }
+      .fa {
+        position: absolute;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        top: 16px;
+        left: 9px;
+        line-height: 18px;
+        vertical-align: text-top;
+      }
+      .validate-info {
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #f5d8a7;
+        border-radius: 2px;
+        background: #fff6db;
+        font-size: 12px;
+      }
+    }
+	}
+}

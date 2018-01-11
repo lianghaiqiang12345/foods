@@ -1,0 +1,225 @@
+*{
+	margin : 0;
+	padding : 0;
+	font-family : Microsoft Yahei;
+}
+:root{
+	--allcolor:#13D1BE;
+}
+html,body{
+	background: #F8F8F8;
+    color:#666;
+}
+ul,ol{
+	list-style : none;
+}
+a{
+	text-decoration : none;
+    color:var(--allcolor);
+}
+a img{
+	border : 0;
+}
+q{
+	quotes : none;
+}
+/*隐藏*/
+.hide{
+	display:none;
+}
+.l{
+    float: left;
+}
+.r{
+    float: right;
+}
+/*容器*/
+.container{
+	width :1190px;
+	margin : 0 auto;
+	clear : both;
+}
+.clear{
+	clear : both;
+}
+.clear:after,
+.container:after{
+	content : '';
+	display : block;
+	clear : both;
+}
+/*表单*/
+.form-field {
+    position: relative;
+    padding: 8px 0 8px 110px;
+    zoom: 1;
+}
+.form-field label {
+    position: absolute;
+    left: 0;
+    width: 100px;
+    padding-top: 6px;
+    font-size: 14px;
+    text-align: right;
+    color: #333;
+}
+.form-field .f-text {
+    width: 248px;
+    height: 24px;
+    padding: 5px;
+    border: 1px solid #aaa;
+    line-height: 24px;
+    vertical-align: top;
+}
+.form-field .f-text:focus, .form-field .f-textarea:focus {
+    border-color: #2bb8aa;
+    outline: 0;
+}
+.form-field .inline-tip {
+    display: inline-block;
+    margin-left: 4px;
+    padding: 6px 0;
+    line-height: 24px;
+    font-size: 12px;
+    color: #666;
+    vertical-align: top;
+    zoom: 1;
+}
+.input-empty{
+  border-color: #f76120 !important;
+}
+.tip-status {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    overflow: hidden;
+    background-position: 0 -191px;
+    vertical-align: -3px;
+    background-image: url(../static/images/icons_1.png);
+    background-repeat: no-repeat;
+}
+.tip-status-opinfo {
+    background-position: 0 -295px;
+}
+.tip-status-success {
+    background-position: 0 -453px;
+}
+/*按钮*/
+.btn{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 7px 20px 6px;
+    font-size: 14px;
+    // font-weight: 700;
+    // text-shadow:0 0 1px black;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    letter-spacing: .1em;
+    text-align: center;
+    text-decoration: none;
+    border-width: 0 0 1px;
+    border-style: solid;
+    background-repeat: repeat-x;
+    border-radius: 2px;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    color:#fff;
+    outline:0;
+}
+.btn {
+    background-color: #2db3a6;
+    background-size: 100%;
+    background-image: linear-gradient(to bottom,#2ec3b4,#2db3a6);
+}
+.btn:disabled{
+    background-color: #ccc;
+    background-image: linear-gradient(to bottom, #ccc, #ccc);
+}
+.ui-checkbox {
+    display: none;
+}
+.ui-checkbox+label {
+    padding-left: 20px;
+    display: inline-block;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAAFVBMVEX////Q0ND+/v7U1NTu7u7i4uLj4+OXRop3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5QkZFOTQxRTFDQjYxMUU0OEM3Njk2QzdEOTRBRkFGOSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5QkZFOTQxRjFDQjYxMUU0OEM3Njk2QzdEOTRBRkFGOSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjlCRkU5NDFDMUNCNjExRTQ4Qzc2OTZDN0Q5NEFGQUY5IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjlCRkU5NDFEMUNCNjExRTQ4Qzc2OTZDN0Q5NEFGQUY5Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/q/+DQAAACpJREFUGFdjYGFmhANmFgZmViY4YGVmYGRigAMmxsHCZWZDOJKNmQHVCwBK0wC3SLIEyQAAAABJRU5ErkJggg==) left center no-repeat;
+}
+.ui-checkbox+label:hover{
+    padding-left: 20px;
+    display: inline-block;
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAAHlBMVEX////6/f0ruKo/vrKA1My+5+O/5+N808s+vrJBv7J0QMnbAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5QkZFOTQyMjFDQjYxMUU0OEM3Njk2QzdEOTRBRkFGOSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGMkRGMzhDQTFEOEIxMUU0OEM3Njk2QzdEOTRBRkFGOSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjlCRkU5NDIwMUNCNjExRTQ4Qzc2OTZDN0Q5NEFGQUY5IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjlCRkU5NDIxMUNCNjExRTQ4Qzc2OTZDN0Q5NEFGQUY5Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+FJ6ckQAAAC5JREFUGFdjYGNmggNmNgZmdkY4YGdmYGJkgANGpsHCZWZBOJKFg4GVA+EFTlYAUT0AzZpvY8QAAAAASUVORK5CYII=) left center no-repeat;
+}
+.ui-checkbox:checked+label{
+    padding-left: 20px;
+    display: inline-block;
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAAaVBMVEUruKr///8/vrL+///9/v4+vrK+5+O/5+OL2NFeyb6N2dGm4dv0+/v7/v1708qI189fyr9Bv7KW3NV30cj6/f2k4duJ19Bvz8X2/PstuauT29SV29QsuKqt495y0MeQ2tOu5N+B1c2G18/6vQ03AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGMkRGMzhDRDFEOEIxMUU0OEM3Njk2QzdEOTRBRkFGOSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGMkRGMzhDRTFEOEIxMUU0OEM3Njk2QzdEOTRBRkFGOSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkYyREYzOENCMUQ4QjExRTQ4Qzc2OTZDN0Q5NEFGQUY5IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkYyREYzOENDMUQ4QjExRTQ4Qzc2OTZDN0Q5NEFGQUY5Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+XzxBjAAAAFlJREFUGFdVzkUOwDAMRNGZJGVmxvsfslUx+Ss/yZYMR+BLONAEE0bx2mkqFKdrGKsUmBXldjFg6zUR5X6vJWRYkvVzBZdn/itgIftfwJDr0jL+smBbvzL7AA91AoLEP6s/AAAAAElFTkSuQmCC) left center no-repeat;
+}    
+label.normal {
+    width: auto;
+    padding: 0;
+    font-size: 12px;
+    text-align: left;
+    height:14px;
+}
+.ui-checkbox+label.normal {
+    padding-left: 20px;
+}
+// 密码强度
+.pw-strength {
+    position: absolute;
+    width: 260px;
+    top: 50px;
+    left: 110px;
+    background: #eee;
+}
+.pw-strength .pw-strength__letter {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.pw-strength .pw-strength__letter .pw-strength__label {
+    display: block;
+    float: left;
+    text-align: center;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    width: 85px;
+    border-right: 2px solid #fff;
+    color: #fff;
+}
+.pw-strength .pw-strength__letter .pw-strength__label--noborder {
+    border-right: 0;
+}
+.pw-strength .pw-strength__bar {
+    background: #d3ebee;
+    height: 20px;
+    width: 0;
+    overflow: hidden;
+    transition: all .4s linear;
+    -webkit-transition: all .4s linear;
+    -moz-transition: all .4s linear;
+    -o-transition: all .4s linear;
+}
+.pw-strength .bar-weak {
+    width: 85px;
+    background: #f76120;
+}
+.pw-strength .bar-normal {
+    width: 172px;
+    background: #ff8900;
+}
+.pw-strength .bar-strong {
+    width: 260px;
+    background: #5bab3c;
+}
+// 动画
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to{
+  opacity: 0
+}
