@@ -94,7 +94,7 @@ export default {
     },
     goback () {
       localStorage.removeItem('user')
-      window.location.reload()
+      this.$router.push('/login')
     },
     onComplete (data) {
       this.$store.commit('setDing')
