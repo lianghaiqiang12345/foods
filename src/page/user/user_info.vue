@@ -5,7 +5,7 @@
       <a href="javascript: void(0);" class="pull-right js-edit-info" @click="formShow = true"><i class="fa fa-pencil"></i> 编辑</a>
     </div>
     <div class="line"></div>
-    <div class="info-wapper" v-loading="loading">
+    <div class="info-wapper" v-loading="loading" v-if="userInfo">
        <div class="info-box clear">
             <label class="pull-left">昵称</label><div class="pull-left">{{userInfo.nickname}}</div>
         </div>
@@ -26,6 +26,7 @@
             <label class="pull-left">个性签名</label><div class="pull-left" v-text="userInfo.idiograph?userInfo.idiograph:'快来写一个签名~'">{{}}</div>
         </div>
     </div>
+    <div v-else style="text-align:center;"><h2 style="margin:20px 0;">404</h2><a herf="javascript:void(0);" @click="creatfun">点击再次获取</a></div>
     <transition name="fade">
     <div id="user-info-form" v-show="formShow">
       <div class="user-title">
@@ -69,7 +70,7 @@
 <script>
 export default {
   created () {
-    this.getUserInfo()
+    this.creatfun()
   },
   data () {
     return {
@@ -78,17 +79,25 @@ export default {
       mappingInfo:'',
       formShow:false,
       hobby:'',
-      loading:true
+      loading:true,
     }
   },
   methods: {
-    getUserInfo () {
-        this.loading = true
+    getHobby () {
       //爱好
-      this.$api.post('user/findFlavor.shtml',null,res=>{
-          this.hobby = res
-           //用户信息
-          this.$api.post('user/findUser.shtml',{id:this.$store.state.user.id},res=>{
+     return new Promise((resolve, reject)=>{
+          this.$api.post('user/findFlavor.shtml',null,res=>{
+            this.hobby = res
+            resolve();
+          },res=>{
+            reject("爱好失败");
+         })
+      })
+    },
+    getUserInfo () {
+      //用户信息
+    return new Promise((resolve, reject)=>{
+      this.$api.post('user/findUser.shtml',{id:this.$store.state.user.id},res=>{
               res.hobby = res.hobby.length?res.hobby.split(','):[]
               this.udloadUserInfo = this.$utils.extend(res)
               this.mappingInfo = this.$utils.extend(res)
@@ -103,15 +112,24 @@ export default {
                 return brr
               }(res.hobby,this.hobby)
               this.userInfo = res
-              this.loading = false
+              resolve();
            },res=>{
-              console.error("用户信息失败")
-              this.loading = false
+              reject("用户信息失败");
            })
-     },res=>{
-        console.error("爱好失败")
+      })
+    },
+    getallInfo: async function () {
+        const f1 = await this.getHobby();
+        const f2 = await this.getUserInfo();
+    },
+    creatfun(){
+      this.loading = true
+      this.getallInfo().then(()=>{
+         this.loading = false
+      }).catch((value)=>{
         this.loading = false
-     })
+        console.error(value)
+      })
     },
     isHobby (h) {
       let arr = h.map(x=> +x)
