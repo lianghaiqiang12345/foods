@@ -24,7 +24,7 @@
                 <div @click="req" class="req"><i class="fa fa-chain"></i> 点击复制美食地址分享<input type="hidden" id="url-input" :value="url"></div>
               </div>
               <div class="d-right">
-                <div class="big"><img :src="'http://39.106.40.235/'+cateFoods.cate_preview" alt=""></div>
+                <div class="big"><img :src="'//39.106.40.235/'+cateFoods.cate_preview" alt=""></div>
               </div>
         </div>
         <div class="food-js" v-html="cateFoods.cate_info"></div>
@@ -40,7 +40,7 @@
             <getlistpage :maxpage="1" @getdata = "getcomment()">
               <div class="list clear" v-if="Comment.list.length == 0">还没有人评论，快去做第一个吧~</div>
               <div class="list clear" v-for="(v,i) in Comment.list" v-else>
-                <div class="header-pic"><img :src="'http://39.106.40.235/'+v.comment_head_pic"></div>
+                <div class="header-pic"><img :src="'//39.106.40.235/'+v.comment_head_pic"></div>
                 <div class="info">
                   <div class="name">{{v.comment_uname}}</div>
                   <div class="date"><span>{{$utils.goodTime(v.comment_time)}}</span></div>
@@ -55,7 +55,7 @@
                     "><span v-show="textIndex===i">收起</span>回复({{v.replys.length}})</span>
                       <div class="clear content" v-show="textIndex===i">
                           <div class="cont-item clear" v-for="(v,i) in v.replys">
-                            <div class="header-pic l"><img :src="'http://39.106.40.235/'+v.reply_head_pic"></div>
+                            <div class="header-pic l"><img :src="'//39.106.40.235/'+v.reply_head_pic"></div>
                             <div class="name l">
                               <span>{{v.reply_uname}}</span><span> 回复 </span><span>{{v.to_name}}</span>：
                             </div>

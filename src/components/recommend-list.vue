@@ -1,27 +1,27 @@
 <template>
   <div class="recommend-list">
-    <a href="javascript:;" class="recommend-item">
+    <router-link :to="'food_particulars/'+LikeFoods.cate_id" class="recommend-item">
       <div class="recommend-card-wrapper">
-        <div class="img-box"><img src="static/images/dog.jpg"alt="" class="image"></div>
+        <div class="img-box"><img :src="'//39.106.40.235'+LikeFoods.cate_preview"alt="" class="image"></div>
         <div class="info-box">
-          <div class="title">淼鑫猪肚鸡（嘉禾望岗店）</div>
+          <div class="title">{{LikeFoods.cate_name}}</div>
           <div class="score-line">
-            <finestar :socure="socure"></finestar>
-          <div class="comment-number">25个评价</div>
+            <finestar :socure="LikeFoods.score"></finestar>
+          <div class="comment-number">{{LikeFoods.comment_num}}个评价</div>
           </div>
           <div class="desc-line">
-            <div class="desc">螺丝</div>
+            <!-- <div class="desc">{{LikeFoods.comment_num}}</div> -->
           </div>
           <div class="bottom-line">
             <div class="price-box">
               <span><span class="yuan">￥</span>
-              <span class="price-number">15.8</span>
+              <span class="price-number">{{LikeFoods.price}}</span>
               <span class="price-desc">起</span></span>
             </div>
           </div>
         </div>
       </div>
-    </a>
+    </router-link>
   </div>
 </template>
 
@@ -31,7 +31,7 @@ export default {
   components: {
     finestar
   },
-  props: [],
+  props: ['LikeFoods'],
   data () {
     return {
       socure: 2

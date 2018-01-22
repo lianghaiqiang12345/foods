@@ -25,7 +25,7 @@ export default {
     return str.replace(/<img [^>]*src=['"]([^'"]+)[^>]*>/gi, function (match, src) {
               let i = src.indexOf('upload')
               src = src.split('')
-              src.splice(0,i,'http://39.106.40.235/')
+              src.splice(0,i,'//39.106.40.235/')
               src = src.join('')
               let img = match.split("\"")
               img[1] = src

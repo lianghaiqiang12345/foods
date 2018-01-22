@@ -90,7 +90,7 @@
           </div>
           <div class="recommend-box">
             <div class="top-nav-box">猜你喜欢</div>
-                <recommend-list></recommend-list>
+                <recommend-list v-for="(item,index) in LikeFoods" :LikeFoods = "item" ></recommend-list>
           </div>
         </div>
       </div>
@@ -124,6 +124,7 @@ export default {
   created () {
     this.getData()
     this.getCate()
+    this.$store.state.isLogin&&this.getLike()
   },
   data () {
     return {
@@ -150,7 +151,8 @@ export default {
         show:false,
         p:[]
       },
-      loading:true
+      loading:true,
+      LikeFoods:[]
     }
   },
   methods: {
@@ -185,6 +187,15 @@ export default {
         },res=>{
           this.loading = false
         })
+      },
+      getLike (){
+          this.$api.post('/cate/getLike.shtml',{user_id:this.$store.state.user.id},res=>{
+              if(({}).toString.call(res) == '[object Object]'){
+                  res = [res]
+              }
+              this.LikeFoods = res
+              console.log(res)
+          })
       },
       getPointer(res){
         let arr = []

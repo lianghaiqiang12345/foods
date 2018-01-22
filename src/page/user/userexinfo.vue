@@ -73,7 +73,7 @@ export default {
   methods: {
     getUserInfo () {
       this.$api.post('user/findUser.shtml',{id:this.user.id},res=>{
-          this.head_pic = "http://39.106.40.235/"+res.head_pic
+          this.head_pic = "//39.106.40.235/"+res.head_pic
        },res=>{
           console.error(res.msg)
        })
