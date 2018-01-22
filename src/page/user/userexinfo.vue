@@ -11,7 +11,7 @@
           <label>更换头像<input type="file" style="display:none" @change="x_headPic()"></label>
         </div>
       </div>
-      <!-- <div class="des-mode"><p>{{nickname}}</p></div> -->
+      <div class="des-mode"><p>{{user.nickname}}</p></div>
       <div class="list-wapper">
       <h2>账户管理</h2>
       <div class="line"></div>
@@ -67,7 +67,6 @@ export default {
       ],
       onIndex:window.location.href.split('/')[window.location.href.split('/').length- 1],
       head_pic:'',
-      nickname:'匿名人士'
     }
   },
   computed:mapState(['user']),
@@ -75,7 +74,6 @@ export default {
     getUserInfo () {
       this.$api.post('user/findUser.shtml',{id:this.user.id},res=>{
           this.head_pic = "http://39.106.40.235/"+res.head_pic
-          this.nickname = res.nickname
        },res=>{
           console.error(res.msg)
        })

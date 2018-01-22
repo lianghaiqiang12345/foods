@@ -246,10 +246,9 @@ export default{
         let user = {
           id: res.id,
           nickname: res.nickname,
-          username: res.username
-        }
-        if (this.timeChecked) {
-          user.time = res.last_login_time
+          username: res.username,
+          time : res.last_login_time,
+          loginTime: 0.5
         }
         this.$utils.setlocalStorage('user', user)
         this.$store.state.isLogin = true

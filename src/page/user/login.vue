@@ -77,15 +77,14 @@ export default {
         username: this.item.username,
         password: this.item.password
       }, res => {
-        console.log(res)
-        let user = {
+        const user = {
           id: res.id,
           nickname: res.nickname,
-          username: res.username
+          username: res.username,
+          time : res.last_login_time,
+          loginTime: this.timeChecked? 7 : 0.5
         }
-        if (this.timeChecked) {
-          user.time = res.last_login_time
-        }
+
         this.$utils.setlocalStorage('user', user)
         this.$store.state.isLogin = true
         this.$store.state.user = user

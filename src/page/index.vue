@@ -75,7 +75,7 @@
                 <span :class="{'active':order==4}" @click="order=4">评价最高</span>
               </div>
               <div class="common-list-main" v-if="cateFoods.length!=0" v-loading="loading">
-                  <list-item v-for="(item, index) in cateFoods" :itemIndex="index + 1" :cateFoods = "item" @ShowMap="ShowMap"></list-item>
+                  <list-item v-for="(item,index) in cateFoods" :itemIndex="index + 1" :cateFoods = "item" @ShowMap="ShowMap"></list-item>
               </div>
               <div class="common-list-main" v-else v-loading="loading">
                 吾好意思，毛你要的

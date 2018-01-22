@@ -156,6 +156,10 @@ export default {
           this.formShow = false
           this.userInfo = this.$utils.extend(this.udloadUserInfo)
           this.userInfo.hobby = this.isHobby(this.userInfo.hobby)
+          const user = this.$utils.getlocalStorage('user')
+          user.nickname = this.udloadUserInfo.nickname
+          this.$utils.setlocalStorage('user',user)
+          this.$store.commit('refashuser')
           this.$message({
             message: '修改资料成功',
             type: 'success'

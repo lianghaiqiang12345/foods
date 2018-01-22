@@ -94,6 +94,7 @@ export default {
     },
     goback () {
       localStorage.removeItem('user')
+      this.$store.state.isLogin = false
       this.$router.push('/login')
     },
     onComplete (data) {

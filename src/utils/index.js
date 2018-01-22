@@ -27,7 +27,6 @@ export default {
               src = src.split('')
               src.splice(0,i,'http://39.106.40.235/')
               src = src.join('')
-              console.log()
               let img = match.split("\"")
               img[1] = src
               return img.join("\"")
