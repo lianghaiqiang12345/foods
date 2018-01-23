@@ -88,7 +88,7 @@
           <div class="map">
             <myamap :pointers="pointers" :poin="poin" :id="'amap-main'" ></myamap>
           </div>
-          <div class="recommend-box">
+          <div class="recommend-box" v-if="LikeFoods.length">
             <div class="top-nav-box">猜你喜欢</div>
                 <recommend-list v-for="(item,index) in LikeFoods" :LikeFoods = "item" :key="index"></recommend-list>
           </div>
