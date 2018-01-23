@@ -70,7 +70,7 @@
               <div class="common-list clear">
               <div class="sort-option">
                 <span class="sort-cur" :class="{'active':order==null}" @click="order=null">智能排序</span>
-                <span class="sort-price":class="{'active':order==1||order==2,'before':order==2,'after':order==1}" :order="order" @click="order=order==1?2:order==2?1:2">价格排序</span>
+                <span class="sort-price" :class="{'active':order==1||order==2,'before':order==2,'after':order==1}" :order="order" @click="order=order==1?2:order==2?1:2">价格排序</span>
                 <span :class="{'active':order==3}" @click="order=3">人气最高</span>
                 <span :class="{'active':order==4}" @click="order=4">评价最高</span>
               </div>
