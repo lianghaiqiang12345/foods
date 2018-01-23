@@ -78,7 +78,7 @@
                   <list-item v-for="(item,index) in cateFoods" :itemIndex="index + 1" :cateFoods = "item" @ShowMap="ShowMap"></list-item>
               </div>
               <div class="common-list-main" v-else v-loading="loading">
-                吾好意思，毛你要的
+                不好意思,没有你需要的美食
               </div>
             </div>
           </getlistpage>
